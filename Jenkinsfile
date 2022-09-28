@@ -22,7 +22,7 @@ pipeline {
             rtDockerPush(
                 serverId: "jfrog",
                 image: "petclinic:latest",
-                host: 'tcp://localhost:2375',
+                //host: 'tcp://localhost:2375',
                 targetRepo: 'petclinic', // where to copy to (from docker-virtual)
                 // Attach custom properties to the published artifacts:
                 properties: 'project-name=docker1;status=stable'
