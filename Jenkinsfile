@@ -15,7 +15,7 @@ pipeline {
         stage ('list images') {
             steps {
                 script {
-                    sh 'sudo service docker status'
+                    sh 'uname -a'
                 }
             }
         }                
