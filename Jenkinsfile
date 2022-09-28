@@ -8,8 +8,8 @@ pipeline {
             steps {
                 script {
                     sh 'docker --version'
-                    sh 'sudo docker build -t petclinic .'
-                    sh 'sudo docker images'
+                    sh 'docker build -t petclinic .'
+                    sh 'docker images'
                 }
             }
         }
