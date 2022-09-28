@@ -9,14 +9,14 @@ pipeline {
                 }
             }
         }
-        stage('Docker Run') {
-            steps {
-                script {
-                    sh 'docker images'
-                    sh 'docker run -d -p 8081:8080 petclinic'
-                }
-            }
-        }
+        // stage('Docker Run') {
+        //     steps {
+        //         script {
+        //             sh 'docker images'
+        //             sh 'docker run -d -p 8081:8080 petclinic'
+        //         }
+        //     }
+        // }
         stage ('Push image to Artifactory') { // take that image and push to artifactory
         steps {
             rtDockerPush(
