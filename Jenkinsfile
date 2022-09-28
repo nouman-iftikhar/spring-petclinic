@@ -4,7 +4,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-                    //sh 'docker build -t petclinic .'
+                    sh "docker build -t ARTIFACTORY_DOCKER_REGISTRY + '/petclinic:latest' ."
                     sh 'docker images'
                 }
             }
@@ -21,7 +21,7 @@ pipeline {
         steps {
             rtDockerPush(
                 serverId: "jfrog",
-                image: "petclinic:latest",
+                image: ARTIFACTORY_DOCKER_REGISTRY + "/petclinic:latest",
                 //host: 'tcp://localhost:2375',
                 targetRepo: 'petclinic', // where to copy to (from docker-virtual)
                 // Attach custom properties to the published artifacts:
