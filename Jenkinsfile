@@ -7,9 +7,16 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-                    sh 'docker --version'
+                    sh 'docker build -t petclinic .'
+                    sh 'docker images'
                 }
-                
+        stage ('list images') {
+            steps {
+                script {
+                    sh 'docker images'
+                }
+            }
+        }                
             }
         }
     }
