@@ -8,7 +8,7 @@ pipeline {
             steps {
                 script {
                     sh 'docker --version'
-                    sh 'docker build -t petclinic .'
+                    sh 'docker build .'
                     sh 'docker images'
                 }
             }
