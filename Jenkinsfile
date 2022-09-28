@@ -15,7 +15,9 @@ pipeline {
         stage ('list images') {
             steps {
                 script {
-                    sh 'docker images'
+                    sh 'systemctl daemon-reload'
+                    sh 'systemctl restart docker'
+                    sh 'sudo service docker status'
                 }
             }
         }                
