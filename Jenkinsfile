@@ -1,15 +1,13 @@
 pipeline {
     agent any
-    tools {
-        dockerTool 'docker'
-    }
+    // tools {
+    //     dockerTool 'docker'
+    // }
     stages {
         stage('Docker Build') {
             steps {
                 script {
-                    sh 'docker --version'
-                    sh 'docker build .'
-                    sh 'docker images'
+                    def myEnv = docker.build 'my-environment:snapshot'
                 }
             }
         }
