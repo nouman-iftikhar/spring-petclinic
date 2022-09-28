@@ -11,6 +11,14 @@ pipeline {
                     sh 'docker images'
                 }
             }
-        }              
+        }
+        stage('Docker Run') {
+            steps {
+                script {
+                    sh 'docker images'
+                    sh 'docker run -d -p 8081:8080 petclinic'
+                }
+            }
+        }                 
     }
 }
