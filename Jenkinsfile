@@ -10,6 +10,8 @@ pipeline {
                     sh 'docker build -t petclinic .'
                     sh 'docker images'
                 }
+            }
+        }
         stage ('list images') {
             steps {
                 script {
@@ -17,7 +19,5 @@ pipeline {
                 }
             }
         }                
-            }
-        }
     }
 }
