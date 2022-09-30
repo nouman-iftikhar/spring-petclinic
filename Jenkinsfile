@@ -23,7 +23,7 @@ pipeline {
                 serverId: "jfrog",
                 image: "rcartifacoty.jfrog.io/petclinic-docker-local/petclinic:${BUILD_NUMBER}",
                 targetRepo: 'petclinic-docker-local', // where to copy to (from docker-virtual)
-                properties: 'project-name=docker1;status=stable'
+                properties: 'project-name=petclinic;status=stable'
             )
         }
     }                 
