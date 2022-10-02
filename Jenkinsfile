@@ -37,7 +37,7 @@ pipeline {
                         set +e
                         docker stop petclinic
                         docker rm petclinic
-                        "docker run -d --name petclinic -p 8083:8080 rcartifacoty.jfrog.io/petclinic-docker-local/petclinic:${BUILD_NUMBER}"
+                        "docker run --name petclinic -d -p 8083:8080 rcartifacoty.jfrog.io/petclinic-docker-local/petclinic:${BUILD_NUMBER}"
                         """
                 }
             }
