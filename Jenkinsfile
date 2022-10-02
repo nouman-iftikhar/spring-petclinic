@@ -5,13 +5,12 @@ pipeline {
             steps {
                 script {
                     sh 'docker images'
-                    sh ''
-                    sh '''
+                    sh """
                         set +e
                         docker stop petclinic
                         docker rm petclinic
-                        '''
-                    sh "docker run -d --name petclinic -p 8083:8080 rcartifacoty.jfrog.io/petclinic-docker-local/petclinic:${BUILD_NUMBER}"
+                        "docker run -d --name petclinic -p 8083:8080 rcartifacoty.jfrog.io/petclinic-docker-local/petclinic:${BUILD_NUMBER}"
+                        """
                 }
             }
         }  
