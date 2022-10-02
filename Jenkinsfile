@@ -10,6 +10,9 @@ pipeline {
                         docker stop petclinic
                         docker rm petclinic
                         "docker run -d --name petclinic -p 8083:8080 rcartifacoty.jfrog.io/petclinic-docker-local/petclinic:${BUILD_NUMBER}"
+                        if [@? == '1' ]: then
+                        continue
+                        fi
                         """
                 }
             }
