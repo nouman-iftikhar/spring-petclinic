@@ -25,8 +25,7 @@ pipeline {
             rtDockerPull(
                 serverId: "jfrog",
                 image: "rcartifacoty.jfrog.io/petclinic-docker-local/petclinic:${BUILD_NUMBER}",
-                sourceRepo: 'petclinic-docker-local',
-                properties: 'project-name=petclinic;status=stable'
+                sourceRepo: 'petclinic-docker-local'
             )
         }
     }
