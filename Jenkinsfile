@@ -6,7 +6,9 @@ pipeline {
                 script {
                     sh 'docker images'
                     sh 'docker stop petclinic'
-                    sh 'if [ "$?" == "1" ]; then continue fi'
+                    sh '''if [ "$?" == "1" ]; then
+                            continue 
+                          fi'''
                     sh 'docker rm petclinic'
                     sh "docker run -d --name petclinic -p 8083:8080 rcartifacoty.jfrog.io/petclinic-docker-local/petclinic:${BUILD_NUMBER}"
                 }
